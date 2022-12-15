@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>Blogs</title>
+{% endblock title%}
+
+{% block body %}
+    <body>
+    <H1>Blogs</H1>
+    <form method="post" action="/edit/{{blog.blog_id}}">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Title</label>
+          <input type="text" value="{{blog.title}}" class="form-control" id="exampleFormControlInput1" name="title" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Author</label>
+            <input type="text" value="{{blog.author}}" class="form-control" id="exampleFormControlInput1" name="author" placeholder="Aurthor">
+          </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Content</label>
+          <textarea class="form-control"  id="exampleFormControlTextarea1" rows="10" name="content">{{blog.content}}</textarea>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+      </form>
+    </body>
+
+{% endblock body %}
